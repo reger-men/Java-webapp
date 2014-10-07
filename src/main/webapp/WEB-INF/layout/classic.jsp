@@ -5,8 +5,8 @@
 <html>
 <head>
 
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-	
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -27,6 +27,11 @@
 </head>
 <body>
 
+	<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras"
+		prefix="tilesx"%>
+
+	<tilesx:useAttribute name="current" />
+	
 	<div class="container">
 
 		<!-- Static navbar -->
@@ -43,8 +48,8 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href='<spring:url value="/" />'>HOME</a></li>
-						<li><a href="#">NEWS</a></li>
+						<li class="${current == 'index' ? 'active' : ''}"><a href='<spring:url value="/" />'>HOME</a></li>
+						<li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users.html" />">NEWS</a></li>
 						<li><a href="#">PRODUKTE</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">REFERENZEN <span class="caret"></span></a>
