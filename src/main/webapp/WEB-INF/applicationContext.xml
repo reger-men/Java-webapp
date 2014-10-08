@@ -36,7 +36,9 @@
 		id="transactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
+
 	<jpa:repositories base-package="cz.bahsal.lida.repository" />
 
+	<import resource="security.xml" />
+	
 </beans>

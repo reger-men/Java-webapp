@@ -36,8 +36,8 @@
 		<entity-name>cz.bahsal.lida.entity.Blog</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
-		<entity-X-Coordinate>560</entity-X-Coordinate>
-		<entity-Y-Coordinate>221</entity-Y-Coordinate>
+		<entity-X-Coordinate>669</entity-X-Coordinate>
+		<entity-Y-Coordinate>189</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

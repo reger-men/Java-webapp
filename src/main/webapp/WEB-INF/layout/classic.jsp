@@ -6,6 +6,7 @@
 <head>
 
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -49,7 +50,9 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="${current == 'index' ? 'active' : ''}"><a href='<spring:url value="/" />'>HOME</a></li>
-						<li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users.html" />">NEWS</a></li>
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users.html" />">NEWS</a></li>
+						</security:authorize>
 						<li><a href="#">PRODUKTE</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">REFERENZEN <span class="caret"></span></a>
@@ -63,6 +66,16 @@
 								<li><a href="#">One more separated link</a></li>
 							</ul></li>
 						<li><a href="#">KONTAKT</a></li>
+						
+						<security:authorize access="! isAuthenticated()">
+							<li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register.html" />">REGISTER</a></li>
+							<li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login.html" />">LOGIN</a></li>
+						</security:authorize>
+						<security:authorize access="isAuthenticated()">
+							<li><a href="<spring:url value="/logout" />">LOGOUT</a></li>
+						</security:authorize>
+						
+						
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 

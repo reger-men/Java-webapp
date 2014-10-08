@@ -7,7 +7,9 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
 
 
 
@@ -44,12 +46,15 @@ public class InitDbService {
 		roleRepository.save(roleUser);
 		
 		Role roleAdmin = new Role();
-		roleAdmin.setName("ROLE_Admin");
+		roleAdmin.setName("ROLE_ADMIN");
 		roleRepository.save(roleAdmin);
 		
 		User userAdmin = new User();
 		userAdmin.setName("admin");
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		userAdmin.setPassword(encoder.encode("0000"));
 		List<Role> roles = new ArrayList<Role>();
+		roles.add(roleAdmin);
 		roles.add(roleUser);
 		userAdmin.setRoles(roles);
 		userRepository.save(userAdmin);
@@ -64,7 +69,7 @@ public class InitDbService {
 		Item item1 = new Item();
 		item1.setBlog(blogJavavids);
 		item1.setTitle("first");
-		item1.setLink("http://www.javavids.com");
+		item1.setLink("http://www.blabla.com");
 		item1.setPublishedDate(new Date());
 		itemRepository.save(item1);
 

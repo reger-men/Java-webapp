@@ -14,6 +14,7 @@ import cz.bahsal.lida.repository.ItemRepository;
 import cz.bahsal.lida.repository.UserRepository;
 
 @Service
+@Transactional
 public class UserService {
 
 		@Autowired
@@ -44,5 +45,10 @@ public class UserService {
 			}
 			user.setBlogs(blogs);
 			return user;
+		}
+
+		public void save(User user) {
+			userRepository.save(user);
+			
 		}
 }
