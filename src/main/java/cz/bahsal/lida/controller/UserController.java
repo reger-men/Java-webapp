@@ -46,7 +46,7 @@ public class UserController {
 																	// @ModelAttribute("user")
 																	// User user
 		userService.save(user);
-		return "user-register";
+		return "redirect:/register.html?success=true";
 	}
 
 }
