@@ -5,7 +5,8 @@
 <html>
 <head>
 
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 
 <!-- Latest compiled and minified CSS -->
@@ -17,6 +18,11 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+		
+
 
 <!-- Latest compiled and minified JavaScript -->
 <script

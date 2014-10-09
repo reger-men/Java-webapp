@@ -66,4 +66,8 @@ public class UserService {
 			userRepository.save(user);
 			
 		}
+
+		public User findOne(String username) {
+			return userRepository.findByName(username);
+		}
 }
