@@ -61,7 +61,8 @@ public class InitDbService {
 		userRepository.save(userAdmin);
 		
 		User userUser = new User();
-		userUser.setName("user");
+		userUser.setEnabled(true);
+		userUser.setName("üser");
 		userUser.setPassword(encoder.encode("0000"));
 		List<Role> roless = new ArrayList<Role>();
 		roless.add(roleUser);
